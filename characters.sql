@@ -1,4 +1,3 @@
-
 --
 -- Tabelstructuur voor tabel `characters`
 --
