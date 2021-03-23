@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Character - Bowser</title>
+    <title>Character <?php echo $result3["name"];?></title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="../Vormgeving/resources/css/style.css" rel="stylesheet"/>
 </head>
@@ -25,8 +25,11 @@
                     <li><span class="fa-li"><i class="fas fa-shield-alt"></i></span> <?php echo $result3['defense'];?></li>
                 </ul>
                 <ul class="gear">
-                    <li><b>Weapon</b>: <?php echo $result3['weapon'];?></li>
-                    <li><b>Armor</b>: <?php echo $result3['armor'];?></li>
+                    <li <?php if($result3['weapon'] == null){echo " style='display: none'";}?>>
+                    <b>Weapon</b>: <?php echo $result3['weapon'];?>
+               
+                    <li <?php if($result3['armor'] == null){echo " style='display: none'";}?>>
+                    <b>Armor</b>: <?php echo $result3['armor'];?>
                 </ul>
             </div>
         </div>
