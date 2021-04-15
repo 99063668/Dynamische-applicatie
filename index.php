@@ -1,7 +1,7 @@
 <?php
     include "includes/database.php";
-    tel_resultaten();
-    fetchall_data();
+    $result2 = telResultaten();
+    $result = getCharacters();
 ?>
 <!DOCTYPE html>
 <html lang="en">
