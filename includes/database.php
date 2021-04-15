@@ -16,39 +16,40 @@
     }
 
     //Verzamelt alle data van de characters op volgorde van naam
-    function fetchall_data(){
-        global $result;
+    function getCharacters(){
         $connect = connection_database();
 
         $stmt = $connect->prepare("SELECT * FROM characters ORDER BY name");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
         
+        return $result;
+
         $connect = null;       
     }
 
     //Telt hoeveel characters er in de database zitten en laat dit zien 
-    function tel_resultaten(){
-        global $result2;
+    function telResultaten(){
         $connect = connection_database();
 
         $stmt = $connect->prepare("SELECT COUNT(*) AS aantal FROM characters");
         $stmt->execute();
         $result2 = $stmt->fetch(PDO::FETCH_ASSOC); 
         
+        return $result2;
+
         $connect = null;       
     }
 
     //Haalt 1 character op uit de database 
-    function fetch_data(){
-        global $result3;
+    function getCharacter($id){
         $connect = connection_database();
-
-        $id = $_GET["id"];
 
         $stmt = $connect->prepare("SELECT * FROM characters WHERE id=?");
         $stmt->execute([$id]);
         $result3 = $stmt->fetch(PDO::FETCH_ASSOC); 
+
+        return $result3;
 
         $connect = null;       
     }

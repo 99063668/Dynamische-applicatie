@@ -1,6 +1,7 @@
 <?php
     include "database.php";
-    fetch_data();
+    $id = $_GET["id"];
+    $result3 = getCharacter($id);
 ?>
 
 <!DOCTYPE html>
